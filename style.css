@@ -399,15 +399,97 @@ body {
   main {
     .main_section {
       height: 864px;
-      background: linear-gradient(
-        295deg,
-        #268b63 0%,
-        #268b63 34.26%,
-        rgba(38, 126, 91, 0.95) 40.78%,
-        rgba(38, 119, 87, 0.85) 47.59%,
-        rgba(38, 115, 85, 0.78) 53.02%,
-        rgba(38, 112, 82, 0.7) 57.5%
-      );
+      background-image: url("./assets/images/section_main_1.jpg");
+      background-repeat: no-repeat;
+      background-size: 67%;
+
+      .main_section__wrap {
+        display: flex;
+        justify-content: space-between;
+        /* background: linear-gradient(
+          295deg,
+          #268b63 0%,
+          #268b63 34.26%,
+          rgba(38, 126, 91, 0.95) 40.78%,
+          rgba(38, 119, 87, 0.85) 47.59%,
+          rgba(38, 115, 85, 0.78) 53.02%,
+          rgba(38, 112, 82, 0.7) 57.5%
+        ); */
+        background: linear-gradient(
+          272.81deg,
+          #268b63 2.41%,
+          #268b63 35.04%,
+          rgba(38, 126, 91, 0.95) 41.26%,
+          rgba(38, 119, 87, 0.85) 47.74%,
+          rgba(38, 115, 85, 0.77669) 52.91%,
+          rgba(38, 112, 82, 0.7) 57.18%
+        );
+
+        height: 100%;
+
+        .main_section__info_wrap {
+          padding-left: 75px;
+          align-content: center;
+          width: 705px;
+
+          h1 {
+            font-family: var(--font-family);
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 266%;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #fefefe;
+          }
+
+          .fio {
+            font-family: var(--second-family);
+            font-weight: 700;
+            font-size: 54px;
+            line-height: 117%;
+            color: #fefefe;
+            margin-top: 8px;
+          }
+
+          .text {
+            font-family: var(--font-family);
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 175%;
+            letter-spacing: 0.01em;
+            color: #fefefe;
+            margin-top: 16px;
+          }
+
+          .btn {
+            border: none;
+            border-radius: 26px;
+            padding: 10px 24px;
+            width: 315px;
+            height: 56px;
+            background: #fefefe;
+            cursor: pointer;
+
+            font-family: var(--font-family);
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 150%;
+            letter-spacing: 0.01em;
+            color: #268b63;
+            margin-top: 40px;
+          }
+
+          .btn:hover {
+            background: #ddffeb;
+          }
+          .btn:active {
+            background: #d9e9e0;
+          }
+        }
+
+        /* .main_section__foto {
+        } */
+      }
     }
   }
 }
