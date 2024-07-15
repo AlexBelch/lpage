@@ -345,6 +345,27 @@ body {
     background: #d9e9e0;
   }
 
+  .btn_green {
+    background: #268b63;
+    color: #fefefe;
+    margin-top: 48px;
+  }
+
+  .btn_green:hover {
+    background: #29a574;
+  }
+
+  .btn_green:active {
+    background: #0c7f52;
+  }
+
+  .btn_carousel {
+    width: 40px;
+    height: 55px;
+    padding: 0;
+    margin-top: 0;
+  }
+
   .social_wrap {
     display: flex;
     gap: 16px;
@@ -634,19 +655,78 @@ body {
           }
         }
       }
+    }
 
-      .btn {
-        background: #268b63;
-        color: #fefefe;
+    .section_education {
+      background: #f0f9f8;
+      padding: 96px 27px;
+      text-align: center;
+
+      .section_education__wrap_carousel {
+        display: flex;
+        align-items: center;
+        width: 100%;
         margin-top: 48px;
-      }
 
-      .btn:hover {
-        background: #29a574;
-      }
+        .section_education__wrap_carousel__wrap_images {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          width: 100%;
+          margin-left: 8px;
+          margin-right: 8px;
 
-      .btn:active {
-        background: #0c7f52;
+          img {
+            width: 410px;
+            height: 300px;
+          }
+        }
+      }
+    }
+
+    .section_experience {
+      background: #e1f1e2;
+      padding: 96px 217px;
+
+      .section_experience__wrap_texts {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        .section_experience__wrap_texts__text {
+          text-align: center;
+
+          span {
+            display: block;
+          }
+
+          span:nth-of-type(1) {
+            font-family: var(--second-family);
+            font-weight: 700;
+            font-size: 78px;
+            line-height: 117%;
+            letter-spacing: -0.02em;
+            background: linear-gradient(
+              180deg,
+              #556f5c 0%,
+              #264b35 28%,
+              #bdd1c5 100%
+            );
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+          span:nth-of-type(2) {
+            font-family: var(--font-family);
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 160%;
+            letter-spacing: 0.01em;
+            text-transform: uppercase;
+            text-align: center;
+            color: #163d2a;
+          }
+        }
       }
     }
   }
