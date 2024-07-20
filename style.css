@@ -368,6 +368,7 @@ body {
 
   .social_wrap {
     display: flex;
+    justify-content: center;
     gap: 16px;
   }
 
@@ -521,6 +522,11 @@ body {
             color: #fefefe;
             margin-top: 16px;
           }
+
+          .foto_mobile,
+          .main_section__info_wrap__mobile {
+            display: none;
+          }
         }
 
         .main_section__foto {
@@ -552,6 +558,10 @@ body {
 
         h2 {
           margin-bottom: 24px;
+        }
+
+        .section_about_psyho__wrap_text {
+          display: none;
         }
 
         p {
@@ -642,11 +652,25 @@ body {
           }
 
           h3 {
+            font-family: var(--font-family);
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 150%;
+            letter-spacing: 0.01em;
+            text-align: center;
+            color: var(--text-black);
             margin-top: 16px;
             margin-bottom: 16px;
           }
 
           p {
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 143%;
+            letter-spacing: 0.01em;
+            text-align: center;
+            color: var(--text-black);
             margin-bottom: 8px;
           }
 
@@ -729,6 +753,77 @@ body {
         }
       }
     }
+
+    .section_reviews {
+      background: #f0f9f8;
+      padding: 96px 27px;
+
+      .section_reviews__wrap_carousel {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-top: 90px;
+
+        .section_reviews__wrap_carousel__wrap_reviews {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          width: 100%;
+          margin-left: 8px;
+          margin-right: 8px;
+
+          .section_reviews__wrap_carousel__wrap_reviews__wrap_review {
+            background: white;
+            padding: 24px;
+            width: 410px;
+            height: 288px;
+
+            .section_reviews__wrap_carousel__wrap_reviews__wrap_review__name {
+              display: flex;
+              justify-content: space-between;
+
+              div:nth-of-type(1) {
+                font-family: var(--font-family);
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 157%;
+                letter-spacing: 0.01em;
+                color: var(--text-black);
+              }
+
+              div:nth-last-of-type(1) {
+                font-family: var(--font-family);
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 143%;
+                letter-spacing: 0.01em;
+                color: var(--text-dark-grey);
+              }
+            }
+
+            .section_reviews__wrap_carousel__wrap_reviews__wrap_review__age {
+              font-family: var(--font-family);
+              font-weight: 500;
+              font-size: 18px;
+              line-height: 150%;
+              letter-spacing: 0.01em;
+              color: var(--text-dark-grey);
+              margin-top: 8px;
+            }
+
+            p {
+              font-family: var(--font-family);
+              font-weight: 500;
+              font-size: 18px;
+              line-height: 150%;
+              letter-spacing: 0.01em;
+              color: var(--text-black);
+              margin-top: 12px;
+            }
+          }
+        }
+      }
+    }
   }
 
   footer {
@@ -752,6 +847,7 @@ body {
 
       .footer__wrap__social {
         margin-top: 48px;
+        justify-content: flex-start;
       }
 
       .footer__wrap__contacs_wrap {
@@ -770,6 +866,15 @@ body {
           line-height: 150%;
           letter-spacing: 0.01em;
           color: #fefefe;
+
+          div {
+            display: flex;
+            flex-direction: column;
+
+            span {
+              text-align: start;
+            }
+          }
         }
       }
 
@@ -789,6 +894,190 @@ body {
           .section_how_works__wrap_items__item {
             flex: 1 1 23%;
           }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  body {
+    .subtitle {
+      font-size: 20px;
+      line-height: 157%;
+    }
+
+    header {
+      padding: 15px;
+
+      .header__wrap {
+        img {
+          content: url("./assets/icons/logo_mobile.svg");
+        }
+
+        .menu__wrap {
+          display: none;
+        }
+      }
+    }
+
+    main {
+      .main_section {
+        background-size: auto;
+        /* min-height: 783px; */
+
+        .main_section__wrap {
+          background: linear-gradient(
+            295deg,
+            rgba(38, 119, 87, 0.85) 0%,
+            rgba(38, 115, 85, 0.78) 100%
+          );
+
+          .main_section__info_wrap {
+            padding-left: 15px;
+            padding-right: 15px;
+            width: auto;
+            align-content: normal;
+            text-align: center;
+
+            .foto_mobile {
+              display: block;
+              margin-right: -15px;
+              margin-left: auto;
+            }
+
+            .fio,
+            .ofline_online {
+              display: none;
+            }
+
+            .text {
+              font-size: 20px;
+              line-height: 157%;
+              letter-spacing: 0.01em;
+              margin-top: 24px;
+              text-align: center;
+            }
+
+            .btn {
+              margin-top: 24px;
+            }
+
+            .main_section__info_wrap__mobile {
+              display: block;
+              text-align: center;
+
+              h1 {
+                font-size: 16px;
+                margin-bottom: 16px;
+                margin-top: 8px;
+              }
+            }
+          }
+
+          .main_section__foto {
+            display: none;
+          }
+        }
+      }
+
+      .section_about_psyho {
+        height: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+
+        .section_about_psyho__wrap_text {
+          display: flex;
+          align-items: center;
+          padding: 0;
+          width: 100%;
+
+          h2 {
+            text-align: center;
+            margin-bottom: 32px;
+          }
+
+          .section_about_psyho__wrap_images {
+            display: flex;
+            margin-bottom: 32px;
+          }
+        }
+        .section_about_psyho__wrap_images {
+          display: none;
+        }
+      }
+
+      .section_about_me {
+        flex-direction: column;
+        padding-top: 96px;
+        background: #f0f9f8;
+
+        .section_about_me__wrap_text {
+          padding-top: 48px;
+          padding-left: 15px;
+          padding-right: 15px;
+
+          h2,
+          .subtitle {
+            text-align: center;
+          }
+        }
+      }
+
+      .section_how_works {
+        padding: 96px 15px;
+
+        .section_how_works__wrap_items {
+          .section_how_works__wrap_items__item {
+            h3 {
+              color: #0c6642;
+            }
+          }
+        }
+      }
+
+      .section_experience {
+        padding: 96px 80px;
+
+        .section_experience__wrap_texts {
+          gap: 94px;
+        }
+      }
+    }
+
+    footer {
+      height: 800px;
+      background-position: bottom;
+
+      .footer__wrap {
+        height: 800px;
+        padding: 96px 15px;
+        text-align: center;
+        background: linear-gradient(
+          360deg,
+          rgba(38, 112, 82, 0.7) 0.19%,
+          rgba(38, 115, 85, 0.78) 24.23%,
+          rgba(38, 119, 87, 0.85) 35.67%,
+          rgba(38, 126, 91, 0.95) 53.09%,
+          #268b63 61.1%,
+          #268b63 100%
+        );
+
+        .logo {
+          content: url("./assets/icons/logo_mobile_vertical.svg");
+        }
+
+        .footer__wrap__social {
+          justify-content: center;
+        }
+
+        .footer__wrap__contacs_wrap {
+          margin-top: 48px;
+        }
+
+        .btn {
+          float: none;
+          margin-top: 166px;
         }
       }
     }
