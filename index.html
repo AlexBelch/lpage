@@ -18,11 +18,15 @@
         <div class="menu__wrap">
           <nav>
             <ul>
-              <li>О психологии</li>
-              <li>Обо мне</li>
-              <li>Отзывы</li>
-              <li>Контакты</li>
-              <li>Договор</li>
+              <li><a href="#about_psyho"> О психологии</a></li>
+              <li><a href="#about_me">Обо мне</a></li>
+              <li><a href="#reviews">Отзывы</a></li>
+              <li><a href="#footer">Контакты</a></li>
+              <li>
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                  >Договор</a
+                >
+              </li>
             </ul>
           </nav>
           <select name="languages" id="language-select">
@@ -30,6 +34,37 @@
             <option value="ua">UA</option>
             <option value="en">EN</option>
           </select>
+        </div>
+        <div class="three col">
+          <div class="hamburger" id="hamburger-1">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+          </div>
+        </div>
+        <div class="adaptive-menu">
+          <div class="hamburger-wrap">
+            <div class="three col">
+              <div class="hamburger is-active" id="hamburger-2">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+              </div>
+            </div>
+          </div>
+          <nav class="nav" id="nav-2">
+            <ul>
+              <li><a href="#about_psyho"> О психологии</a></li>
+              <li><a href="#about_me">Обо мне</a></li>
+              <li><a href="#reviews">Отзывы</a></li>
+              <li><a href="#footer">Контакты</a></li>
+              <li>
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                  >Договор</a
+                >
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
     </header>
@@ -52,19 +87,25 @@
             <div class="main_section__info_wrap__mobile">
               <h1>оффлайн и онлайн консультации</h1>
               <div class="main_section__foto__social social_wrap">
-                <a href="#"
+                <a
+                  href="https://www.instagram.com/good_psycholog"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   ><img src="./assets/icons/instagram.svg" alt="icon instagram"
                 /></a>
-                <a href="#"
+                <a href="#" target="_blank" rel="noopener noreferrer"
                   ><img src="./assets/icons/telegram.svg" alt="icon telegram" />
                 </a>
-                <a href="#"
+                <a href="#" target="_blank" rel="noopener noreferrer"
                   ><img src="./assets/icons/viber.svg" alt="icon viber"
                 /></a>
-                <a href="#"
+                <a
+                  href="https://www.facebook.com/krizhanovska"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   ><img src="./assets/icons/facebook.svg" alt="icon facebook"
                 /></a>
-                <a href="#"
+                <a href="#" target="_blank" rel="noopener noreferrer"
                   ><img src="./assets/icons/whatsapp.svg" alt="icon whatsapp"
                 /></a>
               </div>
@@ -76,29 +117,35 @@
               alt="foto Valeria Krizhanovskaya"
             />
             <div class="main_section__foto__social social_wrap">
-              <a href="#"
+              <a
+                href="https://www.instagram.com/good_psycholog"
+                target="_blank"
+                rel="noopener noreferrer"
                 ><img src="./assets/icons/instagram.svg" alt="icon instagram"
               /></a>
-              <a href="#"
+              <a href="#" target="_blank" rel="noopener noreferrer"
                 ><img src="./assets/icons/telegram.svg" alt="icon telegram" />
               </a>
-              <a href="#"
+              <a href="#" target="_blank" rel="noopener noreferrer"
                 ><img src="./assets/icons/viber.svg" alt="icon viber"
               /></a>
-              <a href="#"
+              <a
+                href="https://www.facebook.com/krizhanovska"
+                target="_blank"
+                rel="noopener noreferrer"
                 ><img src="./assets/icons/facebook.svg" alt="icon facebook"
               /></a>
-              <a href="#"
+              <a href="#" target="_blank" rel="noopener noreferrer"
                 ><img src="./assets/icons/whatsapp.svg" alt="icon whatsapp"
               /></a>
             </div>
           </div>
         </div>
       </section>
-      <section class="section_about_psyho">
+      <section class="section_about_psyho" id="about_psyho">
         <div class="section_about_psyho__wrap_text">
           <h2>Как проходит психотерапия ?</h2>
-          <div class="section_about_psyho__wrap_images">
+          <div class="section_about_psyho__wrap_images_mobile">
             <img
               src="./assets/images/section_about_psyho.png"
               alt="foto section about psyhologie"
@@ -133,7 +180,7 @@
           />
         </div>
       </section>
-      <section class="section_about_me">
+      <section class="section_about_me" id="about_me">
         <img
           src="./assets/images/section_about_me.jpg"
           alt="foto section about me"
@@ -263,6 +310,11 @@
             />
           </div>
           <button class="btn btn_green btn_carousel">&gt;</button>
+          <div class="section_education__wrap_btns_mobile">
+            <button class="btn btn_green btn_carousel">&lt;</button>
+            <span class="number_image">1/9</span>
+            <button class="btn btn_green btn_carousel">&gt;</button>
+          </div>
         </div>
       </section>
       <section class="section_experience">
@@ -282,7 +334,8 @@
           </div>
         </div>
       </section>
-      <section class="section_reviews">
+      <section class="section_reviews" id="reviews">
+        <h2>Отзывы</h2>
         <div class="section_reviews__wrap_carousel">
           <button class="btn btn_green btn_carousel">&lt;</button>
           <div class="section_reviews__wrap_carousel__wrap_reviews">
@@ -350,41 +403,59 @@
             </div>
           </div>
           <button class="btn btn_green btn_carousel">&gt;</button>
+          <div class="section_reviews__wrap_btns_mobile">
+            <button class="btn btn_green btn_carousel">&lt;</button>
+            <span class="number_image">1/27</span>
+            <button class="btn btn_green btn_carousel">&gt;</button>
+          </div>
         </div>
       </section>
     </main>
-    <footer>
-      <div class="footer__wrap">
+    <footer id="footer">
+      <address class="footer__wrap">
         <img
           class="logo"
           src="./assets/icons/logo.svg"
           alt="logo Valeria Krizhanovskaya"
         />
         <div class="footer__wrap__social social_wrap">
-          <a href="#"
+          <a
+            href="https://www.instagram.com/good_psycholog"
+            target="_blank"
+            rel="noopener noreferrer"
             ><img src="./assets/icons/instagram.svg" alt="icon instagram"
           /></a>
-          <a href="#"
+          <a href="#" target="_blank" rel="noopener noreferrer"
             ><img src="./assets/icons/telegram.svg" alt="icon telegram" />
           </a>
-          <a href="#"
+          <a href="#" target="_blank" rel="noopener noreferrer"
             ><img src="./assets/icons/viber.svg" alt="icon viber"
           /></a>
-          <a href="#"
+          <a
+            href="https://www.facebook.com/krizhanovska"
+            target="_blank"
+            rel="noopener noreferrer"
             ><img src="./assets/icons/facebook.svg" alt="icon facebook"
           /></a>
-          <a href="#"
+          <a href="#" target="_blank" rel="noopener noreferrer"
             ><img src="./assets/icons/whatsapp.svg" alt="icon whatsapp"
           /></a>
         </div>
         <div class="footer__wrap__contacs_wrap">
           <div class="footer__wrap__contacs_wrap__row">
             <img src="./assets/icons/point.svg" alt="icon location" />
-            <span>г.Одесса, ул.Базарня 63</span>
+            <span>
+              <a
+                href="https://www.google.ru/maps/place/Bazarna+St,+63,+Odesa,+Odes'ka+oblast,+Ukraine,+65000/@46.4732987,30.7333696,17z/data=!4m9!1m2!2m1!1sukaine+odessa+bazarnaya+63!3m5!1s0x40c63184fbbcd221:0xfb1d18179775e30!8m2!3d46.474233!4d30.7321516!16s%2Fg%2F1tkbwr08?entry=ttu"
+                target="_blank"
+                rel="noopener noreferrer"
+                >г.Одесса, ул.Базарня 63
+              </a>
+            </span>
           </div>
           <div class="footer__wrap__contacs_wrap__row">
             <img src="./assets/icons/call.svg" alt="icon telefon" />
-            <span>+38 093 78 55 887</span>
+            <span><a href="tel: +380937855887"> +38 093 78 55 887</a></span>
           </div>
           <div class="footer__wrap__contacs_wrap__row">
             <img src="./assets/icons/clock.svg" alt="icon clock" />
@@ -395,7 +466,7 @@
           </div>
         </div>
         <button class="btn">Записаться на консультацию</button>
-      </div>
+      </address>
     </footer>
   </body>
 </html>
