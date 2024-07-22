@@ -602,7 +602,7 @@ body {
     }
 
     .section_about_psyho {
-      height: 763px;
+      min-height: 763px;
       padding: 96px 75px;
       display: flex;
 
@@ -1095,6 +1095,12 @@ body {
 
       .section_experience {
         padding: 96px;
+      }
+
+      .section_about_psyho {
+        .section_about_psyho__wrap_images {
+          width: 30%;
+        }
       }
     }
   }
