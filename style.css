@@ -843,6 +843,7 @@ body {
             padding: 24px;
             width: 410px;
             height: 288px;
+            overflow-y: auto;
 
             .section_reviews__wrap_carousel__wrap_reviews__wrap_review__name {
               display: flex;
@@ -1410,11 +1411,21 @@ body {
           }
         }
       }
+
+      .section_reviews {
+        .section_reviews__wrap_carousel {
+          .section_reviews__wrap_carousel__wrap_reviews {
+            .section_reviews__wrap_carousel__wrap_reviews__wrap_review {
+              height: 342px;
+            }
+          }
+        }
+      }
     }
   }
 }
 
-@media screen and (min-width: 560px) {
+@media screen and (min-width: 561px) {
   body {
     footer {
       .footer__wrap {
@@ -1426,7 +1437,7 @@ body {
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   body {
     footer {
       .footer__wrap {
@@ -1438,7 +1449,7 @@ body {
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1270px) {
+@media screen and (min-width: 769px) and (max-width: 1270px) {
   body {
     main {
       .main_section {
