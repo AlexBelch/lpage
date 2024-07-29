@@ -357,7 +357,7 @@ body {
     transition: 0.5s;
     z-index: 9999;
     display: none;
-    height: 909px;
+    height: 100%;
     width: 100%;
     background-image: url("./assets/images/menu.png");
     background-repeat: no-repeat;
@@ -415,7 +415,7 @@ body {
             text-transform: uppercase;
           }
 
-          .active {
+          .language-active {
             background: #0c6642;
             color: #fefefe;
           }

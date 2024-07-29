@@ -1,22 +1,22 @@
-// import i18Obj from "./js/translate.js";
+import i18Obj from "./js/translate.js";
 
-// function getTranslate(lang) {
-//   const allFields = document.querySelectorAll("[data-i18]");
+function getTranslate(lang) {
+  const allFields = document.querySelectorAll("[data-i18]");
 
-//   allFields.forEach((currentValue, currentIndex, listObj) => {
-//     const currentNode = listObj.item(currentIndex);
-//     if (i18Obj[lang][currentNode.dataset.i18]) {
-//       if (currentNode.placeholder) {
-//         currentNode.placeholder = i18Obj[lang][currentNode.dataset.i18];
-//         currentNode.textContent = "";
-//       } else {
-//         currentNode.textContent = i18Obj[lang][currentNode.dataset.i18];
-//       }
-//     }
-//   });
-// }
+  allFields.forEach((currentValue, currentIndex, listObj) => {
+    const currentNode = listObj.item(currentIndex);
+    if (i18Obj[lang][currentNode.dataset.i18]) {
+      if (currentNode.placeholder) {
+        currentNode.placeholder = i18Obj[lang][currentNode.dataset.i18];
+        currentNode.textContent = "";
+      } else {
+        currentNode.textContent = i18Obj[lang][currentNode.dataset.i18];
+      }
+    }
+  });
+}
 
-const myStorage = window.localStorage;
+// const myStorage = window.localStorage;
 
 let activeLanguage = localStorage.getItem("activeLanguage");
 if (!activeLanguage) {
@@ -24,9 +24,11 @@ if (!activeLanguage) {
   activeLanguage = "ru";
 }
 
-// wrap = document.querySelector(`#lang-${activeLanguage}`);
-// wrap.classList.add("language-active");
-// getTranslate(activeLanguage);
+let wrap = document.querySelector(`#lang-${activeLanguage}`);
+wrap.classList.add("language-active");
+let wrap2 = document.getElementById("language-select");
+wrap2.value = activeLanguage;
+getTranslate(activeLanguage);
 
 const hamburger1 = document.querySelector("#hamburger-1");
 const hamburger2 = document.querySelector("#hamburger-2");
@@ -51,24 +53,48 @@ nav.addEventListener("click", closeMenu);
 // const btnWinter = document.querySelector("#btn-winter");
 // btnWinter.addEventListener("click", toggleSeason);
 
-// function toggleLanguage(event) {
-//   console.log("event=", event);
-//   if (event.target.parentElement.classList.contains("language")) {
-//     event.target.classList.add("language-active");
+function toggleLanguage(event) {
+  if (
+    event.target.parentElement.classList.contains(
+      "adaptive-menu__lang_wrap__btn_wrap"
+    )
+  ) {
+    event.target.classList.add("language-active");
 
-//     let wrap = document.querySelector(`#lang-${activeLanguage}`);
-//     wrap.classList.remove("language-active");
+    let wrap = document.querySelector(`#lang-${activeLanguage}`);
+    wrap.classList.remove("language-active");
 
-//     localStorage.setItem("activeLanguage", event.target.id.substring(5));
-//     activeLanguage = localStorage.getItem("activeLanguage");
+    let wrap2 = document.getElementById("language-select");
+    wrap2.value = event.target.id.substring(5);
+    console.log(wrap2.value);
 
-//     getTranslate(activeLanguage);
-//   }
-// }
+    localStorage.setItem("activeLanguage", event.target.id.substring(5));
+    activeLanguage = localStorage.getItem("activeLanguage");
 
-// const langEn = document.querySelector("#lang-en");
-// langEn.addEventListener("click", toggleLanguage);
-// const langRu = document.querySelector("#lang-ru");
-// langRu.addEventListener("click", toggleLanguage);
+    getTranslate(activeLanguage);
+  }
+
+  if (event.target.id === "language-select") {
+    let wrap = document.querySelector(`#lang-${activeLanguage}`);
+    wrap.classList.remove("language-active");
+
+    let wrap2 = document.querySelector(`#lang-${event.target.value}`);
+    wrap2.classList.add("language-active");
+
+    localStorage.setItem("activeLanguage", event.target.value);
+    activeLanguage = localStorage.getItem("activeLanguage");
+
+    getTranslate(activeLanguage);
+  }
+}
+
+const langEn = document.querySelector("#lang-en");
+langEn.addEventListener("click", toggleLanguage);
+const langRu = document.querySelector("#lang-ru");
+langRu.addEventListener("click", toggleLanguage);
+const langUa = document.querySelector("#lang-ua");
+langUa.addEventListener("click", toggleLanguage);
+const selectLang = document.getElementById("language-select");
+selectLang.addEventListener("click", toggleLanguage);
 
 console.log("finish load js");

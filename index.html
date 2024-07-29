@@ -18,19 +18,25 @@
         <div class="menu__wrap">
           <nav>
             <ul>
-              <li><a href="#about_psyho"> О психологии</a></li>
-              <li><a href="#about_me">Обо мне</a></li>
-              <li><a href="#reviews">Отзывы</a></li>
-              <li><a href="#footer">Контакты</a></li>
               <li>
-                <a href="#" target="_blank" rel="noopener noreferrer"
+                <a href="#about_psyho" data-i18="about_psyho"> О психологии</a>
+              </li>
+              <li><a href="#about_me" data-i18="about_me">Обо мне</a></li>
+              <li><a href="#reviews" data-i18="reviews">Отзывы</a></li>
+              <li><a href="#footer" data-i18="contacts">Контакты</a></li>
+              <li>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-i18="contract"
                   >Договор</a
                 >
               </li>
             </ul>
           </nav>
           <select name="languages" id="language-select">
-            <option value="ru" selected>RU</option>
+            <option value="ru">RU</option>
             <option value="ua">UA</option>
             <option value="en">EN</option>
           </select>
@@ -60,16 +66,28 @@
             <nav class="nav" id="nav-2">
               <ul class="nav-list">
                 <li class="nav-item">
-                  <a href="#about_psyho" class="nav-link"> О психологии</a>
+                  <a
+                    href="#about_psyho"
+                    class="nav-link"
+                    data-i18="about_psyho"
+                  >
+                    О психологии</a
+                  >
                 </li>
                 <li class="nav-item">
-                  <a href="#about_me" class="nav-link">Обо мне</a>
+                  <a href="#about_me" class="nav-link" data-i18="about_me"
+                    >Обо мне</a
+                  >
                 </li>
                 <li class="nav-item">
-                  <a href="#reviews" class="nav-link">Отзывы</a>
+                  <a href="#reviews" class="nav-link" data-i18="reviews"
+                    >Отзывы</a
+                  >
                 </li>
                 <li class="nav-item">
-                  <a href="#footer" class="nav-link">Контакты</a>
+                  <a href="#footer" class="nav-link" data-i18="contacts"
+                    >Контакты</a
+                  >
                 </li>
                 <li class="nav-item">
                   <a
@@ -77,6 +95,7 @@
                     class="nav-link"
                     target="_blank"
                     rel="noopener noreferrer"
+                    data-i18="contract"
                     >Договор</a
                   >
                 </li>
@@ -84,39 +103,58 @@
             </nav>
             <div class="adaptive-menu__lang_wrap">
               <div class="adaptive-menu__lang_wrap__btn_wrap">
-                <button class="btn_lang">ua</button
-                ><button class="btn_lang">en</button
-                ><button class="btn_lang active">ru</button>
+                <button class="btn_lang" id="lang-ua">ua</button
+                ><button class="btn_lang" id="lang-en">en</button
+                ><button class="btn_lang" id="lang-ru">ru</button>
               </div>
-              <div>Язык сайта</div>
+              <div data-i18="mobile-menu-text">Язык сайта</div>
             </div>
             <div class="social_wrap">
               <a
                 href="https://www.instagram.com/good_psycholog"
                 target="_blank"
                 rel="noopener noreferrer"
-                ><img src="./assets/icons/instagram.svg" alt="icon instagram"
+                ><img
+                  src="./assets/icons/instagram.svg"
+                  alt="icon instagram"
+                  title="instagram"
               /></a>
               <a href="#" target="_blank" rel="noopener noreferrer"
-                ><img src="./assets/icons/telegram.svg" alt="icon telegram" />
+                ><img
+                  src="./assets/icons/telegram.svg"
+                  alt="icon telegram"
+                  title="telegram"
+                />
               </a>
               <a href="#" target="_blank" rel="noopener noreferrer"
-                ><img src="./assets/icons/viber.svg" alt="icon viber"
+                ><img
+                  src="./assets/icons/viber.svg"
+                  alt="icon viber"
+                  title="viber"
               /></a>
               <a
                 href="https://www.facebook.com/krizhanovska"
                 target="_blank"
                 rel="noopener noreferrer"
-                ><img src="./assets/icons/facebook.svg" alt="icon facebook"
+                ><img
+                  src="./assets/icons/facebook.svg"
+                  alt="icon facebook"
+                  title="facebook"
               /></a>
               <a href="#" target="_blank" rel="noopener noreferrer"
-                ><img src="./assets/icons/whatsapp.svg" alt="icon whatsapp"
+                ><img
+                  src="./assets/icons/whatsapp.svg"
+                  alt="icon whatsapp"
+                  title="whatsapp"
               /></a>
               <a
                 href="https://www.tiktok.com/@good_psycholog?_t=8o68bK6ABXC&_r=1"
                 target="_blank"
                 rel="noopener noreferrer"
-                ><img src="./assets/icons/tiktok.svg" alt="icon tiktok"
+                ><img
+                  src="./assets/icons/tiktok.svg"
+                  alt="icon tiktok"
+                  title="tiktok"
               /></a>
             </div>
           </div>
@@ -132,13 +170,17 @@
               src="./assets/images/section_main_2_mobile.png"
               alt="foto Valeria Krizhanovskaya"
             />
-            <h1 class="ofline_online">оффлайн и онлайн консультации</h1>
-            <div class="fio">Валерия Крыжановская</div>
-            <div class="text">
+            <h1 class="ofline_online" data-i18="main-offline-online">
+              оффлайн и онлайн консультации
+            </h1>
+            <div class="fio" data-i18="main_fio">Валерия Крыжановская</div>
+            <div class="text" data-i18="main-text">
               Я практикующий психолог-сексолог, работаю в психоаналитическом и
               символдраматическом подходах.
             </div>
-            <button class="btn">Записаться на консультацию</button>
+            <button class="btn" data-i18="btn-text">
+              Записаться на консультацию
+            </button>
             <div class="main_section__info_wrap__mobile">
               <h1>оффлайн и онлайн консультации</h1>
               <div class="main_section__foto__social social_wrap">
@@ -146,28 +188,47 @@
                   href="https://www.instagram.com/good_psycholog"
                   target="_blank"
                   rel="noopener noreferrer"
-                  ><img src="./assets/icons/instagram.svg" alt="icon instagram"
+                  ><img
+                    src="./assets/icons/instagram.svg"
+                    alt="icon instagram"
+                    title="instagram"
                 /></a>
                 <a href="#" target="_blank" rel="noopener noreferrer"
-                  ><img src="./assets/icons/telegram.svg" alt="icon telegram" />
+                  ><img
+                    src="./assets/icons/telegram.svg"
+                    alt="icon telegram"
+                    title="telegram"
+                  />
                 </a>
                 <a href="#" target="_blank" rel="noopener noreferrer"
-                  ><img src="./assets/icons/viber.svg" alt="icon viber"
+                  ><img
+                    src="./assets/icons/viber.svg"
+                    alt="icon viber"
+                    title="viber"
                 /></a>
                 <a
                   href="https://www.facebook.com/krizhanovska"
                   target="_blank"
                   rel="noopener noreferrer"
-                  ><img src="./assets/icons/facebook.svg" alt="icon facebook"
+                  ><img
+                    src="./assets/icons/facebook.svg"
+                    alt="icon facebook"
+                    title="facebook"
                 /></a>
                 <a href="#" target="_blank" rel="noopener noreferrer"
-                  ><img src="./assets/icons/whatsapp.svg" alt="icon whatsapp"
+                  ><img
+                    src="./assets/icons/whatsapp.svg"
+                    alt="icon whatsapp"
+                    title="whatsapp"
                 /></a>
                 <a
                   href="https://www.tiktok.com/@good_psycholog?_t=8o68bK6ABXC&_r=1"
                   target="_blank"
                   rel="noopener noreferrer"
-                  ><img src="./assets/icons/tiktok.svg" alt="icon tiktok"
+                  ><img
+                    src="./assets/icons/tiktok.svg"
+                    alt="icon tiktok"
+                    title="tiktok"
                 /></a>
               </div>
             </div>
@@ -182,28 +243,47 @@
                 href="https://www.instagram.com/good_psycholog"
                 target="_blank"
                 rel="noopener noreferrer"
-                ><img src="./assets/icons/instagram.svg" alt="icon instagram"
+                ><img
+                  src="./assets/icons/instagram.svg"
+                  alt="icon instagram"
+                  title="instagram"
               /></a>
               <a href="#" target="_blank" rel="noopener noreferrer"
-                ><img src="./assets/icons/telegram.svg" alt="icon telegram" />
+                ><img
+                  src="./assets/icons/telegram.svg"
+                  alt="icon telegram"
+                  title="telegram"
+                />
               </a>
               <a href="#" target="_blank" rel="noopener noreferrer"
-                ><img src="./assets/icons/viber.svg" alt="icon viber"
+                ><img
+                  src="./assets/icons/viber.svg"
+                  alt="icon viber"
+                  title="viber"
               /></a>
               <a
                 href="https://www.facebook.com/krizhanovska"
                 target="_blank"
                 rel="noopener noreferrer"
-                ><img src="./assets/icons/facebook.svg" alt="icon facebook"
+                ><img
+                  src="./assets/icons/facebook.svg"
+                  alt="icon facebook"
+                  title="facebook"
               /></a>
               <a href="#" target="_blank" rel="noopener noreferrer"
-                ><img src="./assets/icons/whatsapp.svg" alt="icon whatsapp"
+                ><img
+                  src="./assets/icons/whatsapp.svg"
+                  alt="icon whatsapp"
+                  title="whatsapp"
               /></a>
               <a
                 href="https://www.tiktok.com/@good_psycholog?_t=8o68bK6ABXC&_r=1"
                 target="_blank"
                 rel="noopener noreferrer"
-                ><img src="./assets/icons/tiktok.svg" alt="icon tiktok"
+                ><img
+                  src="./assets/icons/tiktok.svg"
+                  alt="icon tiktok"
+                  title="tiktok"
               /></a>
             </div>
           </div>
@@ -490,28 +570,44 @@
             href="https://www.instagram.com/good_psycholog"
             target="_blank"
             rel="noopener noreferrer"
-            ><img src="./assets/icons/instagram.svg" alt="icon instagram"
+            ><img
+              src="./assets/icons/instagram.svg"
+              alt="icon instagram"
+              title="instagram"
           /></a>
           <a href="#" target="_blank" rel="noopener noreferrer"
-            ><img src="./assets/icons/telegram.svg" alt="icon telegram" />
+            ><img
+              src="./assets/icons/telegram.svg"
+              alt="icon telegram"
+              title="telegram"
+            />
           </a>
           <a href="#" target="_blank" rel="noopener noreferrer"
-            ><img src="./assets/icons/viber.svg" alt="icon viber"
+            ><img src="./assets/icons/viber.svg" alt="icon viber" title="viber"
           /></a>
           <a
             href="https://www.facebook.com/krizhanovska"
             target="_blank"
             rel="noopener noreferrer"
-            ><img src="./assets/icons/facebook.svg" alt="icon facebook"
+            ><img
+              src="./assets/icons/facebook.svg"
+              alt="icon facebook"
+              title="facebook"
           /></a>
           <a href="#" target="_blank" rel="noopener noreferrer"
-            ><img src="./assets/icons/whatsapp.svg" alt="icon whatsapp"
+            ><img
+              src="./assets/icons/whatsapp.svg"
+              alt="icon whatsapp"
+              title="whatsapp"
           /></a>
           <a
             href="https://www.tiktok.com/@good_psycholog?_t=8o68bK6ABXC&_r=1"
             target="_blank"
             rel="noopener noreferrer"
-            ><img src="./assets/icons/tiktok.svg" alt="icon tiktok"
+            ><img
+              src="./assets/icons/tiktok.svg"
+              alt="icon tiktok"
+              title="tiktok"
           /></a>
         </div>
         <div class="footer__wrap__contacs_wrap">
