@@ -692,6 +692,7 @@ body {
       min-height: 763px;
       padding: 96px 75px;
       display: flex;
+      align-items: center;
 
       .section_about_psyho__wrap_text {
         display: flex;
@@ -798,7 +799,7 @@ body {
 
           h3 {
             font-family: var(--font-family);
-            font-weight: 500;
+            font-weight: bold;
             font-size: 18px;
             line-height: 150%;
             letter-spacing: 0.01em;
@@ -817,6 +818,9 @@ body {
             text-align: center;
             color: var(--text-black);
             margin-bottom: 8px;
+
+            display: list-item;
+            list-style-position: inside;
           }
 
           p:nth-last-of-type(1) {
@@ -840,7 +844,7 @@ body {
         .section_education__wrap_carousel__wrap_images {
           display: flex;
           flex-wrap: wrap;
-          justify-content: space-between;
+          justify-content: space-evenly;
           width: 100%;
           margin-left: 8px;
           margin-right: 8px;
@@ -865,6 +869,7 @@ body {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
+        gap: 16px;
 
         .section_experience__wrap_texts__text {
           text-align: center;
@@ -920,7 +925,7 @@ body {
         .section_reviews__wrap_carousel__wrap_reviews {
           display: flex;
           flex-wrap: wrap;
-          justify-content: space-between;
+          justify-content: space-evenly;
           width: 100%;
           margin-left: 8px;
           margin-right: 8px;
@@ -1058,6 +1063,18 @@ body {
           .section_how_works__wrap_items__item {
             flex: 1 1 23%;
           }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  body {
+    main {
+      .section_about_me {
+        .section_about_me__wrap_text {
+          padding: 42px 75px 42px 48px;
         }
       }
     }
@@ -1208,6 +1225,32 @@ body {
           .subtitle {
             text-align: center;
           }
+        }
+      }
+
+      .section_about_psyho {
+        height: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+
+        .section_about_psyho__wrap_text {
+          display: flex;
+          align-items: center;
+          padding: 0;
+          width: 100%;
+
+          h2 {
+            text-align: center;
+            margin-bottom: 32px;
+          }
+
+          .section_about_psyho__wrap_images_mobile {
+            display: flex;
+            margin-bottom: 32px;
+          }
+        }
+        .section_about_psyho__wrap_images {
+          display: none;
         }
       }
 
@@ -1377,32 +1420,6 @@ body {
         }
       }
 
-      .section_about_psyho {
-        height: auto;
-        padding-left: 15px;
-        padding-right: 15px;
-
-        .section_about_psyho__wrap_text {
-          display: flex;
-          align-items: center;
-          padding: 0;
-          width: 100%;
-
-          h2 {
-            text-align: center;
-            margin-bottom: 32px;
-          }
-
-          .section_about_psyho__wrap_images_mobile {
-            display: flex;
-            margin-bottom: 32px;
-          }
-        }
-        .section_about_psyho__wrap_images {
-          display: none;
-        }
-      }
-
       .section_about_me {
         flex-direction: column;
         padding-top: 96px;
@@ -1561,7 +1578,9 @@ body {
     footer {
       .footer__wrap {
         .footer__wrap__contacs_wrap {
-          align-items: center;
+          width: fit-content;
+          margin: auto;
+          margin-top: 48px;
         }
       }
     }
@@ -1574,6 +1593,8 @@ body {
       .footer__wrap {
         .footer__wrap__contacs_wrap {
           align-items: start;
+          margin: 0;
+          margin-top: 40px;
         }
       }
     }

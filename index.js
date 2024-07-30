@@ -66,7 +66,6 @@ function toggleLanguage(event) {
 
     let wrap2 = document.getElementById("language-select");
     wrap2.value = event.target.id.substring(5);
-    console.log(wrap2.value);
 
     localStorage.setItem("activeLanguage", event.target.id.substring(5));
     activeLanguage = localStorage.getItem("activeLanguage");
