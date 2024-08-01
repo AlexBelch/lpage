@@ -115,6 +115,14 @@ let listElems = carousel.querySelectorAll("li");
 
 let padLeft = 0;
 
+if (education_gallery.clientWidth <= 345) {
+  width = education_gallery.clientWidth;
+  padLeft = 0;
+} else if (education_gallery.clientWidth <= 409) {
+  width = 345;
+  padLeft = 0;
+}
+
 if (education_gallery.clientWidth <= 820) {
   padLeft = (education_gallery.clientWidth - width) / 2;
   listElems[0].style.paddingLeft = padLeft + "px";
