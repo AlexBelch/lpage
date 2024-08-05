@@ -96,6 +96,26 @@ langUa.addEventListener("click", toggleLanguage);
 const selectLang = document.getElementById("language-select");
 selectLang.addEventListener("click", toggleLanguage);
 
+const aboutPsyhoMore = document.querySelector("#about_psyho_more");
+aboutPsyhoMore.addEventListener("click", () => {
+  const aboutPsyhoMoreWrapText = document.querySelector(
+    ".section_about_psyho__wrap_text__wrap"
+  );
+
+  aboutPsyhoMoreWrapText.style.height = "auto";
+  aboutPsyhoMore.style.display = "none";
+});
+
+const aboutMeMore = document.querySelector("#about_me_more");
+aboutMeMore.addEventListener("click", () => {
+  const aboutMeMoreWrapText = document.querySelector(
+    ".section_about_me__wrap_text__wrap"
+  );
+
+  aboutMeMoreWrapText.style.height = "auto";
+  aboutMeMore.style.display = "none";
+});
+
 // let i = 1;
 // for (let li of carousel.querySelectorAll("li")) {
 //   li.style.position = "relative";

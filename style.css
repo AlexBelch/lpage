@@ -749,13 +749,27 @@ body {
           display: none;
         }
 
-        p {
-          font-family: var(--font-family);
-          font-weight: 500;
-          font-size: 18px;
-          line-height: 150%;
-          letter-spacing: 0.01em;
-          color: var(--text-black);
+        .section_about_psyho__wrap_text__wrap {
+          p {
+            font-family: var(--font-family);
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 150%;
+            letter-spacing: 0.01em;
+            color: var(--text-black);
+          }
+        }
+
+        .btn-more {
+          display: none;
+          border: 1.4px solid #268b63;
+          border-radius: 26px;
+          padding: 10px 24px;
+          width: 345px;
+          height: 56px;
+          background: #fefefe;
+
+          margin-top: 0;
         }
       }
 
@@ -776,7 +790,7 @@ body {
           margin-top: 8px;
         }
 
-        ul {
+        .section_about_me__wrap_text__wrap {
           display: flex;
           flex-direction: column;
           gap: 16px;
@@ -802,6 +816,18 @@ body {
             display: inline-block;
             vertical-align: middle;
           }
+        }
+
+        .btn-more {
+          display: none;
+          border: 1.4px solid #268b63;
+          border-radius: 26px;
+          padding: 10px 24px;
+          width: 345px;
+          height: 56px;
+          background: #fefefe;
+          margin: auto;
+          margin-top: 24px;
         }
       }
     }
@@ -1556,7 +1582,31 @@ body {
 @media screen and (max-width: 560px) {
   body {
     main {
+      .section_about_psyho {
+        .section_about_psyho__wrap_text {
+          .section_about_psyho__wrap_text__wrap {
+            height: 422px;
+            overflow: hidden;
+          }
+
+          .btn-more {
+            display: block;
+          }
+        }
+      }
+
       .section_about_me {
+        .section_about_me__wrap_text {
+          .section_about_me__wrap_text__wrap {
+            height: 422px;
+            overflow: hidden;
+          }
+
+          .btn-more {
+            display: block;
+          }
+        }
+
         img {
           max-width: 100%;
           margin: 0;
