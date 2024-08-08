@@ -981,12 +981,15 @@ body {
           margin-left: 8px;
           margin-right: 8px;
 
+          ul {
+            height: 288px;
+          }
+
           .section_reviews__wrap_carousel__wrap_reviews__wrap_review {
             background: white;
             padding: 24px;
             width: 410px;
             height: 288px;
-            overflow-y: auto;
 
             .section_reviews__wrap_carousel__wrap_reviews__wrap_review__name {
               display: flex;
@@ -1029,6 +1032,8 @@ body {
               letter-spacing: 0.01em;
               color: var(--text-black);
               margin-top: 12px;
+              height: 162px;
+              overflow-y: auto;
             }
           }
         }
@@ -1167,7 +1172,7 @@ body {
         }
       } */
 
-      .section_reviews {
+      /* .section_reviews {
         .section_reviews__wrap_carousel {
           .section_reviews__wrap_carousel__wrap_reviews__wrap_review:nth-child(
               3
@@ -1175,7 +1180,7 @@ body {
             display: none;
           }
         }
-      }
+      } */
     }
   }
 }
@@ -1355,7 +1360,7 @@ body {
         }
       } */
 
-      .section_reviews {
+      /* .section_reviews {
         .section_reviews__wrap_carousel {
           .section_reviews__wrap_carousel__wrap_reviews {
             justify-content: center;
@@ -1367,7 +1372,7 @@ body {
             }
           }
         }
-      }
+      } */
     }
   }
 }
@@ -1531,6 +1536,7 @@ body {
       }
 
       .section_reviews {
+        padding: 96px 15px;
         .section_reviews__wrap_carousel {
           .section_reviews__wrap_carousel__wrap_reviews {
             justify-content: center;
@@ -1636,7 +1642,8 @@ body {
               height: 56px;
             }
 
-            .number_image {
+            .number_image,
+            .number_review {
               font-family: var(--font-family);
               font-weight: 600;
               font-size: 20px;
@@ -1679,6 +1686,21 @@ body {
           }
         }
       }
+
+      .section_reviews {
+        .carousel__wrap {
+          .carousel__wrap__gallery {
+            ul {
+              height: 342px;
+
+              .section_reviews__wrap_carousel__wrap_reviews__wrap_review {
+                width: 345px;
+                height: 342px;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -1692,6 +1714,20 @@ body {
             ul {
               img {
                 width: calc(100vw - 30px);
+              }
+            }
+          }
+        }
+      }
+
+      .section_reviews {
+        .carousel__wrap {
+          .carousel__wrap__gallery {
+            ul {
+              li {
+                .section_reviews__wrap_carousel__wrap_reviews__wrap_review {
+                  width: calc(100vw - 30px);
+                }
               }
             }
           }
