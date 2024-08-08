@@ -96,8 +96,28 @@ langUa.addEventListener("click", toggleLanguage);
 const selectLang = document.getElementById("language-select");
 selectLang.addEventListener("click", toggleLanguage);
 
+const aboutPsyhoMore = document.querySelector("#about_psyho_more");
+aboutPsyhoMore.addEventListener("click", () => {
+  const aboutPsyhoMoreWrapText = document.querySelector(
+    ".section_about_psyho__wrap_text__wrap"
+  );
+
+  aboutPsyhoMoreWrapText.style.height = "auto";
+  aboutPsyhoMore.style.display = "none";
+});
+
+const aboutMeMore = document.querySelector("#about_me_more");
+aboutMeMore.addEventListener("click", () => {
+  const aboutMeMoreWrapText = document.querySelector(
+    ".section_about_me__wrap_text__wrap"
+  );
+
+  aboutMeMoreWrapText.style.height = "auto";
+  aboutMeMore.style.display = "none";
+});
+
 // let i = 1;
-// for (let li of carousel.querySelectorAll("li")) {
+// for (let li of carousel_reviews.querySelectorAll("li")) {
 //   li.style.position = "relative";
 //   li.insertAdjacentHTML(
 //     "beforeend",
@@ -263,6 +283,191 @@ carousel.querySelector(".next").onclick = function () {
 carousel.querySelector(".nextMobile").onclick = function () {
   next();
   carousel.querySelector(".number_image").textContent = currentNumber + "/9";
+};
+
+/* конфигурация */
+let widthReviews = 410; // ширина картинки
+let countReviews = 1; // cдвигаемое количество изображений
+
+let listReviews = carousel_reviews.querySelector("ul");
+let listElemsReviews = carousel_reviews.querySelectorAll("li");
+
+let padLeftReviews = 0;
+
+if (reviews_gallery.clientWidth <= 345) {
+  widthReviews = reviews_gallery.clientWidth;
+  padLeftReviews = 0;
+} else if (reviews_gallery.clientWidth <= 409) {
+  widthReviews = 345;
+  padLeftReviews = 0;
+}
+
+if (reviews_gallery.clientWidth <= 820) {
+  padLeftReviews = (reviews_gallery.clientWidth - widthReviews) / 2;
+  listElemsReviews[0].style.paddingLeft = padLeftReviews + "px";
+} else if (reviews_gallery.clientWidth <= 1359) {
+  padLeftReviews = (reviews_gallery.clientWidth - widthReviews * 2) / 3;
+  listElemsReviews[0].style.paddingLeft = padLeftReviews + "px";
+  listElemsReviews[0].style.paddingRight = padLeftReviews + "px";
+} else {
+  padLeftReviews = (reviews_gallery.clientWidth - widthReviews * 3) / 4;
+  listElemsReviews[0].style.paddingLeft = padLeftReviews + "px";
+  listElemsReviews[0].style.paddingRight = padLeftReviews + "px";
+  listElemsReviews[1].style.paddingRight = padLeftReviews + "px";
+}
+
+let positionReviews = 0; // положение ленты прокрутки
+let currentNumberReviews = 1;
+
+function prevReviews() {
+  // сдвиг влево
+  if (Math.abs(positionReviews) === 0) {
+    positionReviews = -(
+      listElemsReviews.length * widthReviews -
+      widthReviews * countReviews
+    );
+    currentNumberReviews = 12;
+  } else {
+    positionReviews += widthReviews * countReviews;
+    currentNumberReviews = currentNumberReviews - 1;
+  }
+
+  // последнее передвижение влево может быть не на 3, а на 2 или 1 элемент
+  positionReviews = Math.min(positionReviews, 0);
+  listReviews.style.marginLeft = positionReviews + "px";
+
+  if (reviews_gallery.clientWidth <= 820) {
+    if (currentNumberReviews === 12) {
+      listElemsReviews[0].style.paddingLeft = 0;
+      listElemsReviews[11].style.paddingLeft = padLeftReviews + "px";
+    } else {
+      listElemsReviews[currentNumberReviews].style.paddingLeft = 0;
+      listElemsReviews[currentNumberReviews - 1].style.paddingLeft =
+        padLeftReviews + "px";
+    }
+  } else if (reviews_gallery.clientWidth <= 1359) {
+    if (currentNumberReviews === 12) {
+      listElemsReviews[0].style.paddingLeft = 0;
+      listElemsReviews[0].style.paddingRight = 0;
+      listElemsReviews[11].style.paddingLeft = padLeftReviews + "px";
+      listElemsReviews[11].style.paddingRight = padLeftReviews + "px";
+    } else {
+      listElemsReviews[currentNumberReviews].style.paddingLeft = 0;
+      listElemsReviews[currentNumberReviews].style.paddingRight = 0;
+      listElemsReviews[currentNumberReviews - 1].style.paddingLeft =
+        padLeftReviews + "px";
+      listElemsReviews[currentNumberReviews - 1].style.paddingRight =
+        padLeftReviews + "px";
+    }
+  } else {
+    if (currentNumberReviews === 12) {
+      listElemsReviews[0].style.paddingLeft = 0;
+      listElemsReviews[0].style.paddingRight = 0;
+      listElemsReviews[1].style.paddingRight = 0;
+      listElemsReviews[currentNumberReviews - 1].style.paddingLeft =
+        padLeftReviews + "px";
+    } else {
+      listElemsReviews[currentNumberReviews - 1].style.paddingLeft =
+        padLeftReviews + "px";
+      listElemsReviews[currentNumberReviews - 1].style.paddingRight =
+        padLeftReviews + "px";
+      listElemsReviews[currentNumberReviews].style.paddingLeft = 0;
+
+      if (currentNumberReviews < 11) {
+        listElemsReviews[currentNumberReviews + 1].style.paddingRight = 0;
+      }
+    }
+  }
+
+  // list.style.transform = "translateX(" + position + "px)";
+}
+
+function nextReviews() {
+  // сдвиг вправо
+  positionReviews -= widthReviews * countReviews;
+  currentNumberReviews = currentNumberReviews + 1;
+
+  if (Math.abs(positionReviews) === listElemsReviews.length * widthReviews) {
+    positionReviews = 0;
+    currentNumberReviews = 1;
+  }
+
+  if (reviews_gallery.clientWidth <= 820) {
+    if (currentNumberReviews === 1) {
+      listElemsReviews[11].style.paddingLeft = 0;
+      listElemsReviews[currentNumberReviews - 1].style.paddingLeft =
+        padLeftReviews + "px";
+    } else {
+      padLeft = (reviews_gallery.clientWidth - width) / 2;
+      listElemsReviews[currentNumberReviews - 2].style.paddingLeft = 0;
+      listElemsReviews[currentNumberReviews - 1].style.paddingLeft =
+        padLeftReviews + "px";
+    }
+  } else if (reviews_gallery.clientWidth <= 1359) {
+    if (currentNumberReviews === 1) {
+      listElemsReviews[10].style.paddingLeft = 0;
+      listElemsReviews[10].style.paddingRight = 0;
+      listElemsReviews[currentNumberReviews - 1].style.paddingLeft =
+        padLeftReviews + "px";
+      listElemsReviews[currentNumberReviews - 1].style.paddingRight =
+        padLeftReviews + "px";
+    } else {
+      listElemsReviews[currentNumberReviews - 2].style.paddingLeft = 0;
+      listElemsReviews[currentNumberReviews - 2].style.paddingRight = 0;
+      listElemsReviews[currentNumberReviews - 1].style.paddingLeft =
+        padLeftReviews + "px";
+      listElemsReviews[currentNumberReviews - 1].style.paddingRight =
+        padLeftReviews + "px";
+    }
+  } else {
+    if (currentNumberReviews === 1) {
+      listElemsReviews[11].style.paddingLeft = 0;
+      listElemsReviews[11].style.paddingRight = 0;
+      listElemsReviews[currentNumberReviews - 1].style.paddingLeft =
+        padLeftReviews + "px";
+      listElemsReviews[currentNumberReviews - 1].style.paddingRight =
+        padLeftReviews + "px";
+      listElemsReviews[currentNumberReviews].style.paddingRight =
+        padLeftReviews + "px";
+    } else {
+      listElemsReviews[currentNumberReviews - 2].style.paddingLeft = 0;
+      listElemsReviews[currentNumberReviews - 2].style.paddingRight = 0;
+      listElemsReviews[currentNumberReviews - 1].style.paddingLeft =
+        padLeftReviews + "px";
+      listElemsReviews[currentNumberReviews - 1].style.paddingRight =
+        padLeftReviews + "px";
+      if (currentNumberReviews < 12) {
+        listElemsReviews[currentNumberReviews].style.paddingRight =
+          padLeftReviews + "px";
+      }
+    }
+  }
+
+  // последнее передвижение вправо может быть не на 3, а на 2 или 1 элемент
+  positionReviews = Math.max(
+    positionReviews,
+    -widthReviews * (listElemsReviews.length - countReviews)
+  );
+  listReviews.style.marginLeft = positionReviews + "px";
+  // list.style.transform = "translateX(" + position + "px)";
+}
+
+carousel_reviews.querySelector(".prev").onclick = function () {
+  prevReviews();
+};
+carousel_reviews.querySelector(".prevMobile").onclick = function () {
+  prevReviews();
+  carousel_reviews.querySelector(".number_review").textContent =
+    currentNumberReviews + "/12";
+};
+
+carousel_reviews.querySelector(".next").onclick = function () {
+  nextReviews();
+};
+carousel_reviews.querySelector(".nextMobile").onclick = function () {
+  nextReviews();
+  carousel_reviews.querySelector(".number_review").textContent =
+    currentNumberReviews + "/12";
 };
 
 console.log("finish load js");
