@@ -1161,26 +1161,6 @@ body {
       .main_section {
         background-size: 87%;
       }
-
-      /* .section_education {
-        & .section_education__wrap_carousel {
-          .section_education__wrap_carousel__wrap_images {
-            img:nth-child(3) {
-              display: none;
-            }
-          }
-        }
-      } */
-
-      /* .section_reviews {
-        .section_reviews__wrap_carousel {
-          .section_reviews__wrap_carousel__wrap_reviews__wrap_review:nth-child(
-              3
-            ) {
-            display: none;
-          }
-        }
-      } */
     }
   }
 }
@@ -1347,32 +1327,6 @@ body {
       .main_section {
         background-size: 118%;
       }
-
-      /* .section_education {
-        & .section_education__wrap_carousel {
-          .section_education__wrap_carousel__wrap_images {
-            justify-content: center;
-
-            img:nth-child(2) {
-              display: none;
-            }
-          }
-        }
-      } */
-
-      /* .section_reviews {
-        .section_reviews__wrap_carousel {
-          .section_reviews__wrap_carousel__wrap_reviews {
-            justify-content: center;
-
-            .section_reviews__wrap_carousel__wrap_reviews__wrap_review:nth-child(
-                2
-              ) {
-              display: none;
-            }
-          }
-        }
-      } */
     }
   }
 }
@@ -1585,6 +1539,61 @@ body {
   }
 }
 
+@media screen and (max-width: 659px) {
+  body {
+    main {
+      .section_how_works {
+        padding: 96px 15px;
+
+        .section_how_works__wrap_items {
+          row-gap: 32px;
+
+          .section_how_works__wrap_items__item {
+            width: 345px;
+            height: auto;
+
+            h3 {
+              margin-bottom: 0;
+
+              cursor: pointer;
+              transition: all 0.3s ease-in-out;
+            }
+
+            h3::after {
+              /* content: "\2c5"; */
+              content: "\25BC";
+              display: inline-block;
+              width: 20px;
+              height: 20px;
+            }
+
+            p {
+              font-size: 0;
+              margin-bottom: 0;
+              transition: all 0.3s ease-in-out;
+            }
+          }
+
+          .open_item {
+            h3 {
+              margin-bottom: 16px;
+            }
+
+            h3::after {
+              content: "\25B2";
+            }
+
+            p {
+              font-size: 16px;
+              margin-bottom: 8;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 560px) {
   body {
     main {
@@ -1732,6 +1741,67 @@ body {
             }
           }
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 345px) {
+  body {
+    .btn {
+      width: 310px;
+    }
+
+    main {
+      .main_section {
+        .main_section__wrap {
+          .main_section__info_wrap {
+            padding-left: 5px;
+            padding-right: 5px;
+
+            .foto_mobile {
+              margin-right: -5px;
+            }
+          }
+        }
+      }
+
+      .section_about_psyho {
+        padding-left: 5px;
+        padding-right: 5px;
+
+        .section_about_psyho__wrap_text {
+          .btn-more {
+            width: 300px;
+          }
+        }
+      }
+
+      .section_about_me {
+        .section_about_me__wrap_text {
+          padding-left: 5px;
+          padding-right: 5px;
+
+          .btn-more {
+            width: 300px;
+          }
+        }
+      }
+
+      .section_how_works {
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+
+      
+
+    
+    }
+
+    footer {
+      .footer__wrap {
+        padding-left: 5px;
+        padding-right: 5px;
       }
     }
   }
