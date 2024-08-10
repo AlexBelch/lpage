@@ -470,4 +470,17 @@ carousel_reviews.querySelector(".nextMobile").onclick = function () {
     currentNumberReviews + "/12";
 };
 
+const how_works_itemsAll = how_works_items.querySelectorAll(
+  ".section_how_works__wrap_items__item"
+);
+
+for (let index = 0; index < how_works_itemsAll.length; index++) {
+  how_works_itemsAll[index].onclick = function () {
+    console.log("indow.innerWidth=", window.innerWidth);
+    if (window.innerWidth < 660) {
+      how_works_itemsAll[index].classList.toggle("open_item");
+    }
+  };
+}
+
 console.log("finish load js");
