@@ -135,28 +135,6 @@ let listElems = carousel.querySelectorAll("li");
 
 let padLeft = 0;
 
-if (education_gallery.clientWidth <= 345) {
-  width = education_gallery.clientWidth;
-  padLeft = 0;
-} else if (education_gallery.clientWidth <= 409) {
-  width = 345;
-  padLeft = 0;
-}
-
-if (education_gallery.clientWidth <= 820) {
-  padLeft = (education_gallery.clientWidth - width) / 2;
-  listElems[0].style.paddingLeft = padLeft + "px";
-} else if (education_gallery.clientWidth <= 1359) {
-  padLeft = (education_gallery.clientWidth - width * 2) / 3;
-  listElems[0].style.paddingLeft = padLeft + "px";
-  listElems[0].style.paddingRight = padLeft + "px";
-} else {
-  padLeft = (education_gallery.clientWidth - width * 3) / 4;
-  listElems[0].style.paddingLeft = padLeft + "px";
-  listElems[0].style.paddingRight = padLeft + "px";
-  listElems[1].style.paddingRight = padLeft + "px";
-}
-
 let position = 0; // положение ленты прокрутки
 let currentNumber = 1;
 
@@ -293,28 +271,6 @@ let listReviews = carousel_reviews.querySelector("ul");
 let listElemsReviews = carousel_reviews.querySelectorAll("li");
 
 let padLeftReviews = 0;
-
-if (reviews_gallery.clientWidth <= 345) {
-  widthReviews = reviews_gallery.clientWidth;
-  padLeftReviews = 0;
-} else if (reviews_gallery.clientWidth <= 409) {
-  widthReviews = 345;
-  padLeftReviews = 0;
-}
-
-if (reviews_gallery.clientWidth <= 820) {
-  padLeftReviews = (reviews_gallery.clientWidth - widthReviews) / 2;
-  listElemsReviews[0].style.paddingLeft = padLeftReviews + "px";
-} else if (reviews_gallery.clientWidth <= 1359) {
-  padLeftReviews = (reviews_gallery.clientWidth - widthReviews * 2) / 3;
-  listElemsReviews[0].style.paddingLeft = padLeftReviews + "px";
-  listElemsReviews[0].style.paddingRight = padLeftReviews + "px";
-} else {
-  padLeftReviews = (reviews_gallery.clientWidth - widthReviews * 3) / 4;
-  listElemsReviews[0].style.paddingLeft = padLeftReviews + "px";
-  listElemsReviews[0].style.paddingRight = padLeftReviews + "px";
-  listElemsReviews[1].style.paddingRight = padLeftReviews + "px";
-}
 
 let positionReviews = 0; // положение ленты прокрутки
 let currentNumberReviews = 1;
@@ -474,13 +430,77 @@ const how_works_itemsAll = how_works_items.querySelectorAll(
   ".section_how_works__wrap_items__item"
 );
 
-for (let index = 0; index < how_works_itemsAll.length; index++) {
-  how_works_itemsAll[index].onclick = function () {
-    console.log("indow.innerWidth=", window.innerWidth);
-    if (window.innerWidth < 660) {
-      how_works_itemsAll[index].classList.toggle("open_item");
-    }
-  };
+function setupPage() {
+  width = 410;
+
+  if (education_gallery.clientWidth <= 345) {
+    width = education_gallery.clientWidth;
+    padLeft = 0;
+  } else if (education_gallery.clientWidth <= 409) {
+    width = 345;
+    padLeft = 0;
+  }
+
+  if (education_gallery.clientWidth <= 821) {
+    padLeft = (education_gallery.clientWidth - width) / 2;
+    listElems[0].style.paddingLeft = padLeft + "px";
+    listElems[0].style.paddingRight = 0 + "px";
+    listElems[1].style.paddingRight = 0 + "px";
+  } else if (education_gallery.clientWidth <= 1359) {
+    padLeft = (education_gallery.clientWidth - width * 2) / 3;
+    listElems[0].style.paddingLeft = padLeft + "px";
+    listElems[0].style.paddingRight = padLeft + "px";
+    listElems[1].style.paddingRight = 0 + "px";
+  } else {
+    padLeft = (education_gallery.clientWidth - width * 3) / 4;
+    listElems[0].style.paddingLeft = padLeft + "px";
+    listElems[0].style.paddingRight = padLeft + "px";
+    listElems[1].style.paddingRight = padLeft + "px";
+  }
+
+  widthReviews = 410;
+
+  if (reviews_gallery.clientWidth <= 345) {
+    widthReviews = reviews_gallery.clientWidth;
+    padLeftReviews = 0;
+  } else if (reviews_gallery.clientWidth <= 409) {
+    widthReviews = 345;
+    padLeftReviews = 0;
+  }
+
+  if (reviews_gallery.clientWidth <= 821) {
+    padLeftReviews = (reviews_gallery.clientWidth - widthReviews) / 2;
+    listElemsReviews[0].style.paddingLeft = padLeftReviews + "px";
+    listElemsReviews[0].style.paddingRight = 0 + "px";
+    listElemsReviews[1].style.paddingRight = 0 + "px";
+  } else if (reviews_gallery.clientWidth <= 1359) {
+    padLeftReviews = (reviews_gallery.clientWidth - widthReviews * 2) / 3;
+    listElemsReviews[0].style.paddingLeft = padLeftReviews + "px";
+    listElemsReviews[0].style.paddingRight = padLeftReviews + "px";
+    listElemsReviews[1].style.paddingRight = 0 + "px";
+  } else {
+    padLeftReviews = (reviews_gallery.clientWidth - widthReviews * 3) / 4;
+    listElemsReviews[0].style.paddingLeft = padLeftReviews + "px";
+    listElemsReviews[0].style.paddingRight = padLeftReviews + "px";
+    listElemsReviews[1].style.paddingRight = padLeftReviews + "px";
+  }
+
+  for (let index = 0; index < how_works_itemsAll.length; index++) {
+    how_works_itemsAll[index].onclick = function () {
+      console.log("indow.innerWidth=", window.innerWidth);
+      if (window.innerWidth < 660) {
+        how_works_itemsAll[index].classList.toggle("open_item");
+      }
+    };
+  }
 }
+
+setupPage();
+
+function changeWindowSize() {
+  setupPage();
+}
+
+window.onresize = changeWindowSize;
 
 console.log("finish load js");
