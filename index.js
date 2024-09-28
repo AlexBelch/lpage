@@ -16,8 +16,6 @@ function getTranslate(lang) {
   });
 }
 
-// const myStorage = window.localStorage;
-
 let activeLanguage = localStorage.getItem("activeLanguage");
 if (!activeLanguage) {
   localStorage.setItem("activeLanguage", "ru");
@@ -50,8 +48,13 @@ hamburger1.addEventListener("click", toggleMenu);
 hamburger2.addEventListener("click", toggleMenu);
 nav.addEventListener("click", closeMenu);
 
-// const btnWinter = document.querySelector("#btn-winter");
-// btnWinter.addEventListener("click", toggleSeason);
+const btnItems = document.querySelectorAll(".btn-schedule");
+
+btnItems.forEach((btnItem) => {
+  btnItem.addEventListener("click", () => {
+    window.open("https://t.me/Krizhanovska_V", "_blank");
+  });
+});
 
 function toggleLanguage(event) {
   if (
@@ -70,6 +73,18 @@ function toggleLanguage(event) {
     localStorage.setItem("activeLanguage", event.target.id.substring(5));
     activeLanguage = localStorage.getItem("activeLanguage");
 
+    const contractItems = document.querySelectorAll(".get-contract");
+
+    contractItems.forEach((contractItem) => {
+      if (activeLanguage === "ua") {
+        contractItem.href =
+          "https://drive.google.com/file/d/1aHTzq89-7ZnAJiBW6VtQpSrLINJSgmPv/view";
+      } else {
+        contractItem.href =
+          "https://drive.google.com/file/d/1914UMg4hylfk4EtSbX2J4eRfqFSBjwHn/view";
+      }
+    });
+
     getTranslate(activeLanguage);
   }
 
@@ -82,6 +97,18 @@ function toggleLanguage(event) {
 
     localStorage.setItem("activeLanguage", event.target.value);
     activeLanguage = localStorage.getItem("activeLanguage");
+
+    const contractItems = document.querySelectorAll(".get-contract");
+
+    contractItems.forEach((contractItem) => {
+      if (activeLanguage === "ua") {
+        contractItem.href =
+          "https://drive.google.com/file/d/1aHTzq89-7ZnAJiBW6VtQpSrLINJSgmPv/view";
+      } else {
+        contractItem.href =
+          "https://drive.google.com/file/d/1914UMg4hylfk4EtSbX2J4eRfqFSBjwHn/view";
+      }
+    });
 
     getTranslate(activeLanguage);
   }
@@ -116,197 +143,189 @@ aboutMeMore.addEventListener("click", () => {
   aboutMeMore.style.display = "none";
 });
 
-// let i = 1;
-// for (let li of carousel_reviews.querySelectorAll("li")) {
-//   li.style.position = "relative";
-//   li.insertAdjacentHTML(
-//     "beforeend",
-//     `<span style="position:absolute;left:0;top:0">${i}</span>`
-//   );
-//   i++;
+/* config education */
+// let width = 410;
+// let count = 1;
+
+// let list = carousel.querySelector("ul");
+// let listElems = carousel.querySelectorAll("li");
+
+// let padLeft = 0;
+
+// let position = 0;
+// let currentNumber = 1;
+
+// function prev() {
+//   // сдвиг влево
+//   if (Math.abs(position) === 0) {
+//     position = -(listElems.length * width - width * count);
+//     currentNumber = 9;
+//   } else {
+//     position += width * count;
+//     currentNumber = currentNumber - 1;
+//   }
+
+//   // последнее передвижение влево может быть не на 3, а на 2 или 1 элемент
+//   position = Math.min(position, 0);
+//   list.style.marginLeft = position + "px";
+
+//   if (education_gallery.clientWidth <= 820) {
+//     if (currentNumber === 9) {
+//       listElems[0].style.paddingLeft = 0;
+//       listElems[8].style.paddingLeft = padLeft + "px";
+//     } else {
+//       listElems[currentNumber].style.paddingLeft = 0;
+//       listElems[currentNumber - 1].style.paddingLeft = padLeft + "px";
+//     }
+//   } else if (education_gallery.clientWidth <= 1359) {
+//     if (currentNumber === 9) {
+//       listElems[0].style.paddingLeft = 0;
+//       listElems[0].style.paddingRight = 0;
+//       listElems[8].style.paddingLeft = padLeft + "px";
+//       listElems[8].style.paddingRight = padLeft + "px";
+//     } else {
+//       listElems[currentNumber].style.paddingLeft = 0;
+//       listElems[currentNumber].style.paddingRight = 0;
+//       listElems[currentNumber - 1].style.paddingLeft = padLeft + "px";
+//       listElems[currentNumber - 1].style.paddingRight = padLeft + "px";
+//     }
+//   } else {
+//     if (currentNumber === 9) {
+//       listElems[0].style.paddingLeft = 0;
+//       listElems[0].style.paddingRight = 0;
+//       listElems[1].style.paddingRight = 0;
+//       listElems[currentNumber - 1].style.paddingLeft = padLeft + "px";
+//     } else {
+//       listElems[currentNumber - 1].style.paddingLeft = padLeft + "px";
+//       listElems[currentNumber - 1].style.paddingRight = padLeft + "px";
+//       listElems[currentNumber].style.paddingLeft = 0;
+
+//       if (currentNumber < 8) {
+//         listElems[currentNumber + 1].style.paddingRight = 0;
+//       }
+//     }
+//   }
+
+//   // list.style.transform = "translateX(" + position + "px)";
 // }
 
-/* конфигурация */
-let width = 410; // ширина картинки
-let count = 1; // cдвигаемое количество изображений
+// function next() {
+//   // сдвиг вправо
+//   position -= width * count;
+//   currentNumber = currentNumber + 1;
 
-let list = carousel.querySelector("ul");
-let listElems = carousel.querySelectorAll("li");
+//   if (Math.abs(position) === listElems.length * width) {
+//     position = 0;
+//     currentNumber = 1;
+//   }
 
-let padLeft = 0;
+//   if (education_gallery.clientWidth <= 820) {
+//     if (currentNumber === 1) {
+//       listElems[8].style.paddingLeft = 0;
+//       listElems[currentNumber - 1].style.paddingLeft = padLeft + "px";
+//     } else {
+//       padLeft = (education_gallery.clientWidth - width) / 2;
+//       listElems[currentNumber - 2].style.paddingLeft = 0;
+//       listElems[currentNumber - 1].style.paddingLeft = padLeft + "px";
+//     }
+//   } else if (education_gallery.clientWidth <= 1359) {
+//     if (currentNumber === 1) {
+//       listElems[7].style.paddingLeft = 0;
+//       listElems[7].style.paddingRight = 0;
+//       listElems[currentNumber - 1].style.paddingLeft = padLeft + "px";
+//       listElems[currentNumber - 1].style.paddingRight = padLeft + "px";
+//     } else {
+//       listElems[currentNumber - 2].style.paddingLeft = 0;
+//       listElems[currentNumber - 2].style.paddingRight = 0;
+//       listElems[currentNumber - 1].style.paddingLeft = padLeft + "px";
+//       listElems[currentNumber - 1].style.paddingRight = padLeft + "px";
+//     }
+//   } else {
+//     if (currentNumber === 1) {
+//       listElems[8].style.paddingLeft = 0;
+//       listElems[8].style.paddingRight = 0;
+//       listElems[currentNumber - 1].style.paddingLeft = padLeft + "px";
+//       listElems[currentNumber - 1].style.paddingRight = padLeft + "px";
+//       listElems[currentNumber].style.paddingRight = padLeft + "px";
+//     } else {
+//       listElems[currentNumber - 2].style.paddingLeft = 0;
+//       listElems[currentNumber - 2].style.paddingRight = 0;
+//       listElems[currentNumber - 1].style.paddingLeft = padLeft + "px";
+//       listElems[currentNumber - 1].style.paddingRight = padLeft + "px";
+//       if (currentNumber < 9) {
+//         listElems[currentNumber].style.paddingRight = padLeft + "px";
+//       }
+//     }
+//   }
 
-let position = 0; // положение ленты прокрутки
-let currentNumber = 1;
+//   // последнее передвижение вправо может быть не на 3, а на 2 или 1 элемент
+//   position = Math.max(position, -width * (listElems.length - count));
+//   list.style.marginLeft = position + "px";
+//   // list.style.transform = "translateX(" + position + "px)";
+// }
 
-function prev() {
-  // сдвиг влево
-  if (Math.abs(position) === 0) {
-    position = -(listElems.length * width - width * count);
-    currentNumber = 9;
-  } else {
-    position += width * count;
-    currentNumber = currentNumber - 1;
-  }
+// carousel.querySelector(".prev").onclick = function () {
+//   prev();
+// };
+// carousel.querySelector(".prevMobile").onclick = function () {
+//   prev();
+//   carousel.querySelector(".number_image").textContent = currentNumber + "/9";
+// };
 
-  // последнее передвижение влево может быть не на 3, а на 2 или 1 элемент
-  position = Math.min(position, 0);
-  list.style.marginLeft = position + "px";
+// carousel.querySelector(".next").onclick = function () {
+//   next();
+// };
+// carousel.querySelector(".nextMobile").onclick = function () {
+//   next();
+//   carousel.querySelector(".number_image").textContent = currentNumber + "/9";
+// };
 
-  if (education_gallery.clientWidth <= 820) {
-    if (currentNumber === 9) {
-      listElems[0].style.paddingLeft = 0;
-      listElems[8].style.paddingLeft = padLeft + "px";
-    } else {
-      listElems[currentNumber].style.paddingLeft = 0;
-      listElems[currentNumber - 1].style.paddingLeft = padLeft + "px";
-    }
-  } else if (education_gallery.clientWidth <= 1359) {
-    if (currentNumber === 9) {
-      listElems[0].style.paddingLeft = 0;
-      listElems[0].style.paddingRight = 0;
-      listElems[8].style.paddingLeft = padLeft + "px";
-      listElems[8].style.paddingRight = padLeft + "px";
-    } else {
-      listElems[currentNumber].style.paddingLeft = 0;
-      listElems[currentNumber].style.paddingRight = 0;
-      listElems[currentNumber - 1].style.paddingLeft = padLeft + "px";
-      listElems[currentNumber - 1].style.paddingRight = padLeft + "px";
-    }
-  } else {
-    if (currentNumber === 9) {
-      listElems[0].style.paddingLeft = 0;
-      listElems[0].style.paddingRight = 0;
-      listElems[1].style.paddingRight = 0;
-      listElems[currentNumber - 1].style.paddingLeft = padLeft + "px";
-    } else {
-      listElems[currentNumber - 1].style.paddingLeft = padLeft + "px";
-      listElems[currentNumber - 1].style.paddingRight = padLeft + "px";
-      listElems[currentNumber].style.paddingLeft = 0;
-
-      if (currentNumber < 8) {
-        listElems[currentNumber + 1].style.paddingRight = 0;
-      }
-    }
-  }
-
-  // list.style.transform = "translateX(" + position + "px)";
-}
-
-function next() {
-  // сдвиг вправо
-  position -= width * count;
-  currentNumber = currentNumber + 1;
-
-  if (Math.abs(position) === listElems.length * width) {
-    position = 0;
-    currentNumber = 1;
-  }
-
-  if (education_gallery.clientWidth <= 820) {
-    if (currentNumber === 1) {
-      listElems[8].style.paddingLeft = 0;
-      listElems[currentNumber - 1].style.paddingLeft = padLeft + "px";
-    } else {
-      padLeft = (education_gallery.clientWidth - width) / 2;
-      listElems[currentNumber - 2].style.paddingLeft = 0;
-      listElems[currentNumber - 1].style.paddingLeft = padLeft + "px";
-    }
-  } else if (education_gallery.clientWidth <= 1359) {
-    if (currentNumber === 1) {
-      listElems[7].style.paddingLeft = 0;
-      listElems[7].style.paddingRight = 0;
-      listElems[currentNumber - 1].style.paddingLeft = padLeft + "px";
-      listElems[currentNumber - 1].style.paddingRight = padLeft + "px";
-    } else {
-      listElems[currentNumber - 2].style.paddingLeft = 0;
-      listElems[currentNumber - 2].style.paddingRight = 0;
-      listElems[currentNumber - 1].style.paddingLeft = padLeft + "px";
-      listElems[currentNumber - 1].style.paddingRight = padLeft + "px";
-    }
-  } else {
-    if (currentNumber === 1) {
-      listElems[8].style.paddingLeft = 0;
-      listElems[8].style.paddingRight = 0;
-      listElems[currentNumber - 1].style.paddingLeft = padLeft + "px";
-      listElems[currentNumber - 1].style.paddingRight = padLeft + "px";
-      listElems[currentNumber].style.paddingRight = padLeft + "px";
-    } else {
-      listElems[currentNumber - 2].style.paddingLeft = 0;
-      listElems[currentNumber - 2].style.paddingRight = 0;
-      listElems[currentNumber - 1].style.paddingLeft = padLeft + "px";
-      listElems[currentNumber - 1].style.paddingRight = padLeft + "px";
-      if (currentNumber < 9) {
-        listElems[currentNumber].style.paddingRight = padLeft + "px";
-      }
-    }
-  }
-
-  // последнее передвижение вправо может быть не на 3, а на 2 или 1 элемент
-  position = Math.max(position, -width * (listElems.length - count));
-  list.style.marginLeft = position + "px";
-  // list.style.transform = "translateX(" + position + "px)";
-}
-
-carousel.querySelector(".prev").onclick = function () {
-  prev();
-};
-carousel.querySelector(".prevMobile").onclick = function () {
-  prev();
-  carousel.querySelector(".number_image").textContent = currentNumber + "/9";
-};
-
-carousel.querySelector(".next").onclick = function () {
-  next();
-};
-carousel.querySelector(".nextMobile").onclick = function () {
-  next();
-  carousel.querySelector(".number_image").textContent = currentNumber + "/9";
-};
-
-/* конфигурация */
-let widthReviews = 410; // ширина картинки
-let countReviews = 1; // cдвигаемое количество изображений
+/* config reviews */
+let widthReviews = 410;
+let countReviews = 1;
+const COUNT_REVIEWS = 7;
 
 let listReviews = carousel_reviews.querySelector("ul");
 let listElemsReviews = carousel_reviews.querySelectorAll("li");
 
 let padLeftReviews = 0;
 
-let positionReviews = 0; // положение ленты прокрутки
+let positionReviews = 0;
 let currentNumberReviews = 1;
 
 function prevReviews() {
-  // сдвиг влево
   if (Math.abs(positionReviews) === 0) {
     positionReviews = -(
       listElemsReviews.length * widthReviews -
       widthReviews * countReviews
     );
-    currentNumberReviews = 12;
+    currentNumberReviews = COUNT_REVIEWS;
   } else {
     positionReviews += widthReviews * countReviews;
     currentNumberReviews = currentNumberReviews - 1;
   }
 
-  // последнее передвижение влево может быть не на 3, а на 2 или 1 элемент
   positionReviews = Math.min(positionReviews, 0);
   listReviews.style.marginLeft = positionReviews + "px";
 
   if (reviews_gallery.clientWidth <= 820) {
-    if (currentNumberReviews === 12) {
+    if (currentNumberReviews === COUNT_REVIEWS) {
       listElemsReviews[0].style.paddingLeft = 0;
-      listElemsReviews[11].style.paddingLeft = padLeftReviews + "px";
+      listElemsReviews[COUNT_REVIEWS - 1].style.paddingLeft =
+        padLeftReviews + "px";
     } else {
       listElemsReviews[currentNumberReviews].style.paddingLeft = 0;
       listElemsReviews[currentNumberReviews - 1].style.paddingLeft =
         padLeftReviews + "px";
     }
   } else if (reviews_gallery.clientWidth <= 1359) {
-    if (currentNumberReviews === 12) {
+    if (currentNumberReviews === COUNT_REVIEWS) {
       listElemsReviews[0].style.paddingLeft = 0;
       listElemsReviews[0].style.paddingRight = 0;
-      listElemsReviews[11].style.paddingLeft = padLeftReviews + "px";
-      listElemsReviews[11].style.paddingRight = padLeftReviews + "px";
+      listElemsReviews[COUNT_REVIEWS - 1].style.paddingLeft =
+        padLeftReviews + "px";
+      listElemsReviews[COUNT_REVIEWS - 1].style.paddingRight =
+        padLeftReviews + "px";
     } else {
       listElemsReviews[currentNumberReviews].style.paddingLeft = 0;
       listElemsReviews[currentNumberReviews].style.paddingRight = 0;
@@ -316,7 +335,7 @@ function prevReviews() {
         padLeftReviews + "px";
     }
   } else {
-    if (currentNumberReviews === 12) {
+    if (currentNumberReviews === COUNT_REVIEWS) {
       listElemsReviews[0].style.paddingLeft = 0;
       listElemsReviews[0].style.paddingRight = 0;
       listElemsReviews[1].style.paddingRight = 0;
@@ -329,17 +348,14 @@ function prevReviews() {
         padLeftReviews + "px";
       listElemsReviews[currentNumberReviews].style.paddingLeft = 0;
 
-      if (currentNumberReviews < 11) {
+      if (currentNumberReviews < 6) {
         listElemsReviews[currentNumberReviews + 1].style.paddingRight = 0;
       }
     }
   }
-
-  // list.style.transform = "translateX(" + position + "px)";
 }
 
 function nextReviews() {
-  // сдвиг вправо
   positionReviews -= widthReviews * countReviews;
   currentNumberReviews = currentNumberReviews + 1;
 
@@ -350,19 +366,19 @@ function nextReviews() {
 
   if (reviews_gallery.clientWidth <= 820) {
     if (currentNumberReviews === 1) {
-      listElemsReviews[11].style.paddingLeft = 0;
+      listElemsReviews[COUNT_REVIEWS - 1].style.paddingLeft = 0;
       listElemsReviews[currentNumberReviews - 1].style.paddingLeft =
         padLeftReviews + "px";
     } else {
-      padLeft = (reviews_gallery.clientWidth - width) / 2;
+      padLeftReviews = (reviews_gallery.clientWidth - widthReviews) / 2;
       listElemsReviews[currentNumberReviews - 2].style.paddingLeft = 0;
       listElemsReviews[currentNumberReviews - 1].style.paddingLeft =
         padLeftReviews + "px";
     }
   } else if (reviews_gallery.clientWidth <= 1359) {
     if (currentNumberReviews === 1) {
-      listElemsReviews[10].style.paddingLeft = 0;
-      listElemsReviews[10].style.paddingRight = 0;
+      listElemsReviews[COUNT_REVIEWS - 2].style.paddingLeft = 0;
+      listElemsReviews[COUNT_REVIEWS - 2].style.paddingRight = 0;
       listElemsReviews[currentNumberReviews - 1].style.paddingLeft =
         padLeftReviews + "px";
       listElemsReviews[currentNumberReviews - 1].style.paddingRight =
@@ -377,8 +393,8 @@ function nextReviews() {
     }
   } else {
     if (currentNumberReviews === 1) {
-      listElemsReviews[11].style.paddingLeft = 0;
-      listElemsReviews[11].style.paddingRight = 0;
+      listElemsReviews[COUNT_REVIEWS - 1].style.paddingLeft = 0;
+      listElemsReviews[COUNT_REVIEWS - 1].style.paddingRight = 0;
       listElemsReviews[currentNumberReviews - 1].style.paddingLeft =
         padLeftReviews + "px";
       listElemsReviews[currentNumberReviews - 1].style.paddingRight =
@@ -392,20 +408,18 @@ function nextReviews() {
         padLeftReviews + "px";
       listElemsReviews[currentNumberReviews - 1].style.paddingRight =
         padLeftReviews + "px";
-      if (currentNumberReviews < 12) {
+      if (currentNumberReviews < COUNT_REVIEWS) {
         listElemsReviews[currentNumberReviews].style.paddingRight =
           padLeftReviews + "px";
       }
     }
   }
 
-  // последнее передвижение вправо может быть не на 3, а на 2 или 1 элемент
   positionReviews = Math.max(
     positionReviews,
     -widthReviews * (listElemsReviews.length - countReviews)
   );
   listReviews.style.marginLeft = positionReviews + "px";
-  // list.style.transform = "translateX(" + position + "px)";
 }
 
 carousel_reviews.querySelector(".prev").onclick = function () {
@@ -414,7 +428,7 @@ carousel_reviews.querySelector(".prev").onclick = function () {
 carousel_reviews.querySelector(".prevMobile").onclick = function () {
   prevReviews();
   carousel_reviews.querySelector(".number_review").textContent =
-    currentNumberReviews + "/12";
+    currentNumberReviews + `/${COUNT_REVIEWS}`;
 };
 
 carousel_reviews.querySelector(".next").onclick = function () {
@@ -423,7 +437,7 @@ carousel_reviews.querySelector(".next").onclick = function () {
 carousel_reviews.querySelector(".nextMobile").onclick = function () {
   nextReviews();
   carousel_reviews.querySelector(".number_review").textContent =
-    currentNumberReviews + "/12";
+    currentNumberReviews + `/${COUNT_REVIEWS}`;
 };
 
 const how_works_itemsAll = how_works_items.querySelectorAll(
@@ -431,32 +445,32 @@ const how_works_itemsAll = how_works_items.querySelectorAll(
 );
 
 function setupPage() {
-  width = 410;
+  // width = 410;
 
-  if (education_gallery.clientWidth <= 345) {
-    width = education_gallery.clientWidth;
-    padLeft = 0;
-  } else if (education_gallery.clientWidth <= 409) {
-    width = 345;
-    padLeft = 0;
-  }
+  // if (education_gallery.clientWidth <= 345) {
+  //   width = education_gallery.clientWidth;
+  //   padLeft = 0;
+  // } else if (education_gallery.clientWidth <= 409) {
+  //   width = 345;
+  //   padLeft = 0;
+  // }
 
-  if (education_gallery.clientWidth <= 821) {
-    padLeft = (education_gallery.clientWidth - width) / 2;
-    listElems[0].style.paddingLeft = padLeft + "px";
-    listElems[0].style.paddingRight = 0 + "px";
-    listElems[1].style.paddingRight = 0 + "px";
-  } else if (education_gallery.clientWidth <= 1359) {
-    padLeft = (education_gallery.clientWidth - width * 2) / 3;
-    listElems[0].style.paddingLeft = padLeft + "px";
-    listElems[0].style.paddingRight = padLeft + "px";
-    listElems[1].style.paddingRight = 0 + "px";
-  } else {
-    padLeft = (education_gallery.clientWidth - width * 3) / 4;
-    listElems[0].style.paddingLeft = padLeft + "px";
-    listElems[0].style.paddingRight = padLeft + "px";
-    listElems[1].style.paddingRight = padLeft + "px";
-  }
+  // if (education_gallery.clientWidth <= 821) {
+  //   padLeft = (education_gallery.clientWidth - width) / 2;
+  //   listElems[0].style.paddingLeft = padLeft + "px";
+  //   listElems[0].style.paddingRight = 0 + "px";
+  //   listElems[1].style.paddingRight = 0 + "px";
+  // } else if (education_gallery.clientWidth <= 1359) {
+  //   padLeft = (education_gallery.clientWidth - width * 2) / 3;
+  //   listElems[0].style.paddingLeft = padLeft + "px";
+  //   listElems[0].style.paddingRight = padLeft + "px";
+  //   listElems[1].style.paddingRight = 0 + "px";
+  // } else {
+  //   padLeft = (education_gallery.clientWidth - width * 3) / 4;
+  //   listElems[0].style.paddingLeft = padLeft + "px";
+  //   listElems[0].style.paddingRight = padLeft + "px";
+  //   listElems[1].style.paddingRight = padLeft + "px";
+  // }
 
   widthReviews = 410;
 
@@ -502,5 +516,3 @@ function changeWindowSize() {
 }
 
 window.onresize = changeWindowSize;
-
-console.log("finish load js");
