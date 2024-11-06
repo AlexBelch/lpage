@@ -18,6 +18,7 @@ const i18Obj = {
       'The principle of my work is based on the methods of psychoanalysis and catathymic-imaginative psychotherapy (symboldrama or the catathymic experience of images). Psychoanalytic therapy involves analyzing the patient\'s free associations. Catathymic Imagery Facilitation (CIF) is a depth-psychologically oriented psychotherapy method, also known as the "waking dream" method.',
     "about-psyho-text3":
       "During therapy, the patient discusses what bothers him, including thoughts, images, objects, etc. In this process, the psychotherapist assists in uncovering the hidden meanings or patterns within these associations. This exploration can provide insight into the presence of psychological problems and facilitate their resolution.",
+    "btn-text-more": "See more",
     "about-me-title": "About me",
     "about-me-subtitle":
       "Practicing psychologist-sexologist with a psychoanalytic approach.",
@@ -128,6 +129,7 @@ const i18Obj = {
       'Принцип моей работы основан на методе психоанализа и кататимно-имагинативной психотерапии (символдрама или кататимное переживание образов). Психоаналитическая терапия основана на анализе свободных ассоциаций пациента. Кататимное переживания образов (КПО) - это метод глубинно-психологически ориентированной психотерапии, известный также как метод "сновидений наяву".',
     "about-psyho-text3":
       "В процессе терапии пациент рассказывает о том что его беспокоит, с помощью свободных ассоциаций (мысли, образы, предметы и т.д.). В этот случае психотерапевт помогает осознать скрытые значения или закономерности этих ассоциаций, это может послужить основной для нахождения психологических проблем, для последующих их решений.",
+    "btn-text-more": "Смотреть еще",
     "about-me-title": "Обо мне",
     "about-me-subtitle":
       "Практикующий психолог-сексолог в психоаналитическом подходе. ",
@@ -240,6 +242,7 @@ const i18Obj = {
       'Принцип моєї роботи ґрунтується на методі психоаналізу і кататимно-імагінативній психотерапії (символдрама або кататимне переживання образів). Психоаналітична терапія ґрунтується на аналізі вільних асоціацій пацієнта. Кататимне переживання образів (КПО) — це метод глибинно-психологічно орієнтованої психотерапії, також відомий як метод "сновидінь наяву".',
     "about-psyho-text3":
       "Під час терапії пацієнт розповідає про те, що турбує його, використовуючи вільні асоціації (думки, образи, предмети і т.д.). У цьому випадку психотерапевт допомагає усвідомити приховані значення або закономірності цих асоціацій, що може стати основою для виявлення психологічних проблем і їх подальшого вирішення.",
+    "btn-text-more": "Дивитися ще",
     "about-me-title": "Про мене",
     "about-me-subtitle":
       "Практикуючий психолог-сексолог з психоаналітичним підходом.",
