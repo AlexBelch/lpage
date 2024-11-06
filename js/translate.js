@@ -1,6 +1,6 @@
 const i18Obj = {
   en: {
-    about_psyho: "About psychology",
+    about_psyho: "What is psychology?",
     about_me: "About me",
     reviews: "Reviews",
     contacts: "Contacts",
@@ -9,7 +9,7 @@ const i18Obj = {
     "main-offline-online": "Offline and online consultations",
     "main-fio": "Valeriya Kryzhanovskaya",
     "main-text":
-      "I am a practicing psychologist-sexologist, working in psychoanalytic and symbol-dramatic approaches.",
+      "I am a practicing psychologist-sexologist, working with psychoanalytic and symbol-dramatic approaches.",
     "btn-text": "Schedule a consultation",
     "about-psyho-title": "How does psychotherapy work?",
     "about-psyho-text1":
@@ -20,7 +20,7 @@ const i18Obj = {
       "During therapy, the patient discusses what bothers him, including thoughts, images, objects, etc. In this process, the psychotherapist assists in uncovering the hidden meanings or patterns within these associations. This exploration can provide insight into the presence of psychological problems and facilitate their resolution.",
     "about-me-title": "About me",
     "about-me-subtitle":
-      "Practicing psychologist-sexologist in the psychoanalytic approach.",
+      "Practicing psychologist-sexologist with a psychoanalytic approach.",
     "about-me-item1":
       "Graduated from Odessa National University named after I.I. Mechnikov, with a Master's degree in Psychology.",
     "about-me-item2":
