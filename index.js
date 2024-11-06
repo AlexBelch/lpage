@@ -10,7 +10,11 @@ function getTranslate(lang) {
         currentNode.placeholder = i18Obj[lang][currentNode.dataset.i18];
         currentNode.textContent = "";
       } else {
-        currentNode.textContent = i18Obj[lang][currentNode.dataset.i18];
+        if (currentNode.id === "about_psyho_more" || currentNode.id === "about_me_more") {
+          currentNode.childNodes[0].textContent = i18Obj[lang][currentNode.dataset.i18];
+        } else {
+          currentNode.textContent = i18Obj[lang][currentNode.dataset.i18];
+        }
       }
     }
   });
