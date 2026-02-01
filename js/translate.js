@@ -107,7 +107,7 @@ const i18Obj = {
     "review7-date": "3 months ago",
     "review7-text":
       "I want to thank Valeria for her support and professional help. After our conversations, I always feel a surge of new strength and energy. There is a desire to move forward and not be afraid. Thank you very much!",
-    "footer-location": "Odessa, 63 Bazarnaya str.",
+    "footer-location": "Odessa, 66 Pushkinskaya str.",
     "footer-days": "Monday - Friday",
   },
   ru: {
@@ -220,7 +220,7 @@ const i18Obj = {
     "review7-age": "30 лет",
     "review7-text":
       "Хочу поблагодарить Валерию за поддержку и профессиональную помощь. После наших бесед всегда чувствую прилив новых сил и энергии. Появляется желание двигаться дальше и не бояться. Спасибо большое!",
-    "footer-location": "г.Одесса, ул.Базарная 63",
+    "footer-location": "г.Одесса, ул.Пушкинская 66",
     "footer-days": "Понeдельник - Пятница",
   },
   ua: {
@@ -331,7 +331,7 @@ const i18Obj = {
     "review7-age": "30 років",
     "review7-text":
       "Хочу подякувати Валерію за підтримку та професійну допомогу. Після наших розмов завжди відчуваю приплив нових сил та енергії. З'являється бажання рухатись далі і не боятися. Дуже дякую!",
-    "footer-location": "м.Одеса, вул.Базарна 63",
+    "footer-location": "м.Одеса, вул.Пушкінська 66",
     "footer-days": "Понеділок - П'ятниця",
   },
 };
